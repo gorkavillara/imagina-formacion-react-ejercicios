@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, Component } from "react";
 import "./App.css";
 
 const Saludo = ({ nombre }) => <h1>Hola {nombre}</h1>;
@@ -15,7 +15,7 @@ const ComponenteCambio = () => {
 
   return (
     <button ref={buttonRef} onMouseEnter={obtenInfo} onClick={cambiaEstado}>
-      Cambiar
+      {activo ? "Encendido" : "Apagado"}
     </button>
   );
 };
@@ -29,6 +29,7 @@ function App() {
   return (
     <div className="App">
       <Saludo nombre="Gorka" />
+      <ComponenteCambio />
       <ComponenteMontado />
     </div>
   );
