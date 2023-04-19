@@ -1,19 +1,29 @@
-import { useEffect, useState } from 'react';
-import './App.css';
+import { useEffect, useState, useRef } from "react";
+import "./App.css";
 
-const Saludo = ({ nombre }) => <h1>Hola {nombre}</h1>
+const Saludo = ({ nombre }) => <h1>Hola {nombre}</h1>;
 
 const ComponenteCambio = () => {
-  const [activo, setActivo] = useState(false)
-  const cambiaEstado = () => setActivo(estadoanterior => !estadoanterior)
+  const [activo, setActivo] = useState(false);
+  const buttonRef = useRef(null);
+  const cambiaEstado = () => setActivo((estadoanterior) => !estadoanterior);
 
-  return <button onClick={cambiaEstado}>Cambiar</button>
-}
+  const obtenInfo = () => {
+    const target = buttonRef.current.target;
+    console.log(target);
+  };
+
+  return (
+    <button ref={buttonRef} onMouseEnter={obtenInfo} onClick={cambiaEstado}>
+      Cambiar
+    </button>
+  );
+};
 
 const ComponenteMontado = () => {
-  useEffect(() => console.log("Se ha montado el componente"), [])
-  return <h1>Componente montado</h1>
-}
+  useEffect(() => console.log("Se ha montado el componente"), []);
+  return <h1>Componente montado</h1>;
+};
 
 function App() {
   return (
@@ -22,6 +32,6 @@ function App() {
       <ComponenteMontado />
     </div>
   );
-} 
+}
 
 export default App;
