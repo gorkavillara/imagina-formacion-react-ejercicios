@@ -22,6 +22,6 @@ function App() {
       <ComponenteMontado />
     </div>
   );
-}
+} 
 
 export default App;
