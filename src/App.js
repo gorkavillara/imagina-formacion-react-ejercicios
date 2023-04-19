@@ -19,6 +19,7 @@ function App() {
   return (
     <div className="App">
       <Saludo nombre="Gorka" />
+      <ComponenteCambio />
       <ComponenteMontado />
     </div>
   );
