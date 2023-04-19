@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+
+const Saludo = ({ nombre }) => <h1>Hola {nombre}</h1>
+
+const ComponenteCambio = () => {
+  const [activo, setActivo] = useState(false)
+  const cambiaEstado = () => setActivo(estadoanterior => !estadoanterior)
+
+  return <button onClick={cambiaEstado}>Cambiar</button>
+}
+
+const ComponenteMontado = () => {
+  useEffect(() => console.log("Se ha montado el componente"), [])
+  return <h1>Componente montado</h1>
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Saludo nombre="Gorka" />
+      <ComponenteMontado />
     </div>
   );
 }
