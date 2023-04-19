@@ -10,7 +10,7 @@ const ComponenteCambio = () => {
 
   const obtenInfo = () => {
     const target = buttonRef.current.target;
-    console.log(target);
+    console.log(target); 
   };
 
   return (
