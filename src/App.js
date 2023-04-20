@@ -1,10 +1,8 @@
-import "./App.scss";
+import MUIForm from "./components/MUIForm";
 
 function App() {
   return (
-    <div className="App">
-      Hola mundo
-    </div>
+    <MUIForm />
   );
 }
 
