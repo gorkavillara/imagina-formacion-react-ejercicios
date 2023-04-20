@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import "./App.css";
+import "./App.scss";
 
 const Saludo = ({ nombre }) => <h1>Hola {nombre}</h1>;
 
@@ -10,12 +10,17 @@ const ComponenteCambio = () => {
 
   const obtenInfo = () => {
     const target = buttonRef.current.target;
-    console.log(target); 
+    console.log(target);
   };
 
   return (
-    <button ref={buttonRef} onMouseEnter={obtenInfo} onClick={cambiaEstado}>
-      Cambiar
+    <button
+      className={`${activo ? "encendido" : "apagado"}`}
+      ref={buttonRef}
+      onMouseEnter={obtenInfo}
+      onClick={cambiaEstado}
+    >
+      {activo ? "Encendido" : "Apagado"}
     </button>
   );
 };
