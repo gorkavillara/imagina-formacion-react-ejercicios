@@ -1,9 +1,14 @@
-import "./App.scss"
+import { useState } from "react";
+import "./App.scss";
+import Saludo from "./components/Saludo";
 
 function App() {
+  const [estado, setEstado] = useState(false);
+  const cambiaEstado = () => setEstado((estadoanterior) => !estadoanterior);
   return (
     <div className="App">
-      Hola mundo
+      <Saludo />
+      <button onClick={cambiaEstado}>Cambia</button>
     </div>
   );
 }
