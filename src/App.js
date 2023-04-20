@@ -1,10 +1,12 @@
 import "./App.scss";
+import PokeController from "./components/PokeController";
+import PokeContextProvider from "./contexts/PokeContextProvider";
 
 function App() {
   return (
-    <div className="App">
-      Hola Mundo
-    </div>
+    <PokeContextProvider>
+      <PokeController />
+    </PokeContextProvider>
   );
 }
 
