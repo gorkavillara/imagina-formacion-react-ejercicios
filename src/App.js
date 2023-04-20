@@ -1,9 +1,10 @@
 import "./App.scss";
+import VariablesEntorno from "./components/VariablesEntorno";
 
 function App() {
   return (
     <div className="App">
-      Hola mundo
+      <VariablesEntorno />
     </div>
   );
 }
